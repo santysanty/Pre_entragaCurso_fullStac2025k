@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tienda Feria - PreEntrega</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <h1>Tienda de Feria</h1>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#reseñas">Reseñas</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="seccion-banner">
+      <h1>Feria Virtual Regional - Sabores y Artesanías de Argentina</h1>
+  <p>Bienvenidos a nuestra feria virtual, un espacio donde productores y artesanos de la región comparten lo mejor de la cultura y los sabores argentinos.</p>
+      <img src="img/logo.jpeg" alt="Logo de la feria" />
+    </section>
+
+    <section id="productos" class="seccion-productos">
+      <h2>🌿 Productos destacados</h2>
+      <div class="productos-grid">
+        <article class="card">
+          <img src="img/mate.jpg" alt="Producto 1" />
+          <h3>Mate artesanal</h3>
+          <p>$1500</p>
+        </article>
+        <article class="card">
+          <img src="img/cuadroMano.jpg" alt="Producto 2" />
+          <h3>Cuadro pintado a mano</h3>
+          <p>$2500</p>
+        </article>
+        <article class="card">
+          <img src="img/javones.jpeg" alt="Producto 3" />
+          <h3>Jabones naturales</h3>
+          <p>$800</p>
+        </article>
+      </div>
+    </section>
+    <section id="puestos" class="seccion-puestos">
+  <h2>🛍️ Puestos y lo que ofrecen</h2>
+  <div class="puestos-grid">
+    <article class="puesto-card">
+      <h3>Artesanías La Flor</h3>
+      <p>Ofrece mates, bombillas, y cuencos hechos a mano.</p>
+      <button>Acceder</button>
+    </article>
+    <article class="puesto-card">
+      <h3>Eco Jabones</h3>
+      <p>Venta de jabones naturales, velas y esencias artesanales.</p>
+      <button>Acceder</button>
+    </article>
+    <article class="puesto-card">
+      <h3>PintArte</h3>
+      <p>Cuadros pintados a mano y decoración única.</p>
+      <button>Acceder</button>
+    </article>
+  </div>
+</section>
+
+    <section id="reseñas" class="seccion-reseñas">
+      <h2>⭐ Opiniones de nuestros clientes</h2>
+      <div class="reseñas-grid">
+        <div class="reseña">
+          <p>“Excelente calidad y atención.”</p>
+          <span>- Lucía R.</span>
+        </div>
+        <div class="reseña">
+          <p>“Volvería a comprar sin dudas.”</p>
+          <span>- Marcos T.</span>
+        </div>
+        <div class="reseña">
+          <p>“Muy recomendable, productos únicos.”</p>
+          <span>- Elena G.</span>
+        </div>
+      </div>
+    </section>
+
+   <section id="multimedia">
+  <h2>🎥 Video de la feria</h2>
+  <div class="video-responsive" style="max-width: 605px; min-width: 325px;">
+    <iframe 
+      width="560" 
+      height="115" 
+      src="https://www.youtube.com/embed/XarsYZbW5Lc?si=ChxkcwMjyHQwthYN" 
+      title="Video de la feria" 
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen>
+    </iframe>
+  </div>
+</section>
+
+
+    <section id="contacto" class="seccion-contacto">
+      <h2>📬 Contacto</h2>
+      <form action="https://formspree.io/f/tu-id-de-formspree" method="POST">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required />
+
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Tienda de Feria - Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,247 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  background-color: #ffffff;
+  color: #333;
+}
+
+header {
+  background-color: #74c0e3; /* celeste bandera */
+  color: white;
+  padding: 25px 20px;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 12px 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #f5c518; /* amarillo sol */
+}
+
+main {
+  padding: 25px 20px;
+}
+
+.seccion-banner {
+  text-align: center;
+  background: linear-gradient(to right, #cce7f5, #e6f4fa);
+  padding: 50px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 40px;
+  color: #1a3d5d;
+  font-weight: 600;
+}
+
+.seccion-banner img {
+  width: 100%;
+  height: 200px; /* fija la altura deseada del rectángulo */
+  object-fit: cover; /* llena todo el espacio recortando si hace falta */
+  border-radius: 8px;
+  border: 4px solid #74c0e3;
+  display: block;
+  margin: 25px auto 0 auto;
+}
+
+
+.productos-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  justify-content: center;
+}
+
+.card {
+  background-color: #f4faff;
+  padding: 18px;
+  border-radius: 12px;
+  width: 220px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.seccion-puestos {
+  padding: 45px 20px;
+  background-color: #eaf6fb;
+  border-radius: 10px;
+  margin-top: 40px;
+}
+
+.seccion-puestos h2 {
+  text-align: center;
+  margin-bottom: 32px;
+  color: #1a3d5d;
+  font-weight: 700;
+}
+
+.puestos-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+}
+
+.puesto-card {
+  background: white;
+  border: 1.5px solid #b7dcef;
+  border-radius: 14px;
+  padding: 22px;
+  width: 270px;
+  text-align: center;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.puesto-card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.puesto-card button {
+  margin-top: 14px;
+  padding: 12px 24px;
+  background-color: #f5c518; /* dorado bandera */
+  color: #1a1a1a;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.puesto-card button:hover {
+  background-color: #e0b200;
+}
+
+.reseñas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 22px;
+  padding-top: 25px;
+}
+
+.reseña {
+  background-color: #f4faff;
+  padding: 18px;
+  border-left: 5px solid #74c0e3;
+  font-style: italic;
+  color: #555;
+}
+
+.seccion-contacto form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 520px;
+  margin: 30px auto 0 auto;
+}
+
+.seccion-contacto input,
+.seccion-contacto textarea {
+  padding: 10px;
+  border: 1.5px solid #b7dcef;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+.seccion-contacto button {
+  background-color: #74c0e3;
+  color: white;
+  border: none;
+  padding: 14px;
+  cursor: pointer;
+  font-weight: 700;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.seccion-contacto button:hover {
+  background-color: #5a9cc0;
+}
+
+.video-responsive {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.video-responsive iframe,
+.video-responsive blockquote {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+footer {
+  background-color: #74c0e3;
+  color: white;
+  text-align: center;
+  padding: 20px 10px;
+  margin-top: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card, .puesto-card {
+    width: 90%;
+  }
+  .puestos-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .productos-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .seccion-banner img {
+    width: 110px;
+  }
+  iframe {
+    height: 220px;
+  }
+}
