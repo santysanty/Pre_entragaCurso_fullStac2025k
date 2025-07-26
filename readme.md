@@ -57,4 +57,4 @@ El objetivo es aplicar los conocimientos adquiridos en **HTML, CSS y JavaScript*
 │ ├── mate.jpg
 │ ├── cuadroMano.jpg
 │ └── javones.jpeg
-├── README.md
+├── README.md# Pre_entragaCurso_fullStac2025k
