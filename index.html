@@ -19,12 +19,27 @@
         <li><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>
+    <button class="btn-carrito" id="abrir-carrito">Carrito (<span id="cantidad-carrito">0</span>)</button>
   </header>
+
+  <div id="carrito-flotante" class="carrito-flotante">
+    <h3>🛒 Tu Carrito</h3>
+    <div class="carrito-items-container">
+      <ul id="lista-carrito">
+        </ul>
+    </div>
+    <p>Total: $<span id="total-carrito">0.00</span></p>
+    <div class="carrito-acciones">
+      <button id="vaciar-carrito" class="btn-vaciar-carrito">Vaciar Carrito</button>
+      <button id="boton-pagar" class="btn-pagar">Pagar</button>
+      <button id="cerrar-carrito" class="btn-cerrar-carrito">Cerrar</button>
+    </div>
+  </div>
 
   <main>
     <section id="inicio" class="seccion-banner">
       <h1>Feria Virtual Regional - Sabores y Artesanías de Argentina</h1>
-  <p>Bienvenidos a nuestra feria virtual, un espacio donde productores y artesanos de la región comparten lo mejor de la cultura y los sabores argentinos.</p>
+      <p>Bienvenidos a nuestra feria virtual, un espacio donde productores y artesanos de la región comparten lo mejor de la cultura y los sabores argentinos.</p>
       <img src="img/logo.jpeg" alt="Logo de la feria" />
     </section>
 
@@ -32,42 +47,54 @@
       <h2>🌿 Productos destacados</h2>
       <div class="productos-grid">
         <article class="card">
-          <img src="img/mate.jpg" alt="Producto 1" />
+          <img src="img/mate.jpg" alt="Mate artesanal" />
           <h3>Mate artesanal</h3>
           <p>$1500</p>
+          <button class="btn-agregar" data-id="mate-artesanal" data-nombre="Mate artesanal" data-precio="1500">Agregar al carrito</button>
         </article>
+
         <article class="card">
-          <img src="img/cuadroMano.jpg" alt="Producto 2" />
+          <img src="img/cuadroMano.jpg" alt="Cuadro pintado a mano" />
           <h3>Cuadro pintado a mano</h3>
           <p>$2500</p>
+          <button class="btn-agregar" data-id="cuadro-pintado" data-nombre="Cuadro pintado a mano" data-precio="2500">Agregar al carrito</button>
         </article>
+
         <article class="card">
-          <img src="img/javones.jpeg" alt="Producto 3" />
+          <img src="img/javones.jpeg" alt="Jabones naturales" />
           <h3>Jabones naturales</h3>
           <p>$800</p>
+          <button class="btn-agregar" data-id="jabones-naturales" data-nombre="Jabones naturales" data-precio="800">Agregar al carrito</button>
         </article>
       </div>
     </section>
+
+    <section id="productos-retail" class="seccion-productos">
+      <h2>🌿 Productos Nuevos de retail</h2>
+      <div id="productos-container" class="productos-grid">
+        </div>
+    </section>
+
     <section id="puestos" class="seccion-puestos">
-  <h2>🛍️ Puestos y lo que ofrecen</h2>
-  <div class="puestos-grid">
-    <article class="puesto-card">
-      <h3>Artesanías La Flor</h3>
-      <p>Ofrece mates, bombillas, y cuencos hechos a mano.</p>
-      <button>Acceder</button>
-    </article>
-    <article class="puesto-card">
-      <h3>Eco Jabones</h3>
-      <p>Venta de jabones naturales, velas y esencias artesanales.</p>
-      <button>Acceder</button>
-    </article>
-    <article class="puesto-card">
-      <h3>PintArte</h3>
-      <p>Cuadros pintados a mano y decoración única.</p>
-      <button>Acceder</button>
-    </article>
-  </div>
-</section>
+      <h2>🛍️ Puestos y lo que ofrecen</h2>
+      <div class="puestos-grid">
+        <article class="puesto-card">
+          <h3>Artesanías La Flor</h3>
+          <p>Ofrece mates, bombillas, y cuencos hechos a mano.</p>
+          <button>Acceder</button>
+        </article>
+        <article class="puesto-card">
+          <h3>Eco Jabones</h3>
+          <p>Venta de jabones naturales, velas y esencias artesanales.</p>
+          <button>Acceder</button>
+        </article>
+        <article class="puesto-card">
+          <h3>PintArte</h3>
+          <p>Cuadros pintados a mano y decoración única.</p>
+          <button>Acceder</button>
+        </article>
+      </div>
+    </section>
 
     <section id="reseñas" class="seccion-reseñas">
       <h2>⭐ Opiniones de nuestros clientes</h2>
@@ -87,21 +114,19 @@
       </div>
     </section>
 
-   <section id="multimedia">
-  <h2>🎥 Video de la feria</h2>
-  <div class="video-responsive" style="max-width: 605px; min-width: 325px;">
-    <iframe 
-      width="560" 
-      height="115" 
-      src="https://www.youtube.com/embed/XarsYZbW5Lc?si=ChxkcwMjyHQwthYN" 
-      title="Video de la feria" 
-      frameborder="0" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-      allowfullscreen>
-    </iframe>
-  </div>
-</section>
-
+    <section id="multimedia">
+      <h2>🎥 Video de la feria</h2>
+      <div class="video-responsive" style="max-width: 605px; min-width: 325px;">
+        <iframe
+          width="560"
+          height="115"
+          src="https://www.youtube.com/embed/dQw4w9WgXcQ"  title="Video de la feria"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
 
     <section id="contacto" class="seccion-contacto">
       <h2>📬 Contacto</h2>
@@ -121,7 +146,17 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 Tienda de Feria - Todos los derechos reservados.</p>
+    <p>© 2025 Tienda de Feria - Todos los derechos reservados.</p>
+    <nav class="nav-footer">
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#reseñas">Reseñas</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
   </footer>
+  <script src="js/producto.js"></script>
+  <script src="js/carrito.js"></script>
 </body>
 </html>

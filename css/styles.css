@@ -1,3 +1,4 @@
+/* Estilos generales */
 * {
   margin: 0;
   padding: 0;
@@ -9,26 +10,55 @@ body {
   line-height: 1.6;
   background-color: #ffffff;
   color: #333;
+  font-size: 16px; /* Tamaño de fuente base para pantallas grandes */
+  /* Ajustar padding-top y padding-bottom en media queries */
+  padding-top: 105px; /* Altura predeterminada del header en escritorio */
+  padding-bottom: 70px; /* Altura predeterminada del footer en escritorio */
 }
 
+/* Header y Navegación Principal */
 header {
   background-color: #74c0e3; /* celeste bandera */
   color: white;
-  padding: 25px 20px;
-  text-align: center;
+  padding: 15px 20px;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1001;
+  display: flex;
+  justify-content: space-between; /* Alinea los elementos a los extremos */
+  align-items: center;
 }
 
-nav ul {
+header h1 {
+    margin: 0;
+    flex-shrink: 0;
+    font-size: 2rem; /* Tamaño de fuente para el título en escritorio */
+}
+
+/* NAV PRINCIPAL (ESCRITORIO) */
+header nav {
+    flex-grow: 1; /* Permite que el nav ocupe el espacio restante */
+    text-align: right; /* Alinea los elementos del nav a la derecha */
+}
+
+header nav ul {
   list-style: none;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   flex-wrap: wrap;
   gap: 15px;
-  padding: 12px 0;
+  padding: 0;
+  margin: 0;
 }
 
-nav a {
+header nav ul li {
+    margin-left: 15px;
+}
+
+header nav a {
   color: white;
   text-decoration: none;
   font-weight: 700;
@@ -36,14 +66,35 @@ nav a {
   transition: color 0.3s ease;
 }
 
-nav a:hover {
-  color: #f5c518; /* amarillo sol */
+header nav a:hover {
+  color: #f5c518;
 }
 
+/* Estilos para el botón del carrito en el nav principal */
+.btn-carrito {
+  background-color: #f5c518;
+  color: #1a1a1a;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  margin-left: 20px; /* Separar del nav */
+  flex-shrink: 0;
+}
+
+.btn-carrito:hover {
+  background-color: #e0b200;
+}
+
+/* Contenedor principal */
 main {
   padding: 25px 20px;
 }
 
+/* Sección Banner */
 .seccion-banner {
   text-align: center;
   background: linear-gradient(to right, #cce7f5, #e6f4fa);
@@ -57,22 +108,24 @@ main {
 
 .seccion-banner img {
   width: 100%;
-  height: 200px; /* fija la altura deseada del rectángulo */
-  object-fit: cover; /* llena todo el espacio recortando si hace falta */
+  height: 200px;
+  object-fit: cover;
   border-radius: 8px;
   border: 4px solid #74c0e3;
   display: block;
   margin: 25px auto 0 auto;
 }
 
-
-.productos-grid {
+/* Grid de Productos y Puestos */
+.productos-grid,
+.puestos-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 22px;
   justify-content: center;
 }
 
+/* Estilos de la tarjeta (Card) */
 .card {
   background-color: #f4faff;
   padding: 18px;
@@ -81,6 +134,10 @@ main {
   text-align: center;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 380px;
 }
 
 .card:hover {
@@ -90,10 +147,50 @@ main {
 
 .card img {
   width: 100%;
+  height: 150px;
+  object-fit: contain;
   border-radius: 8px;
   margin-bottom: 12px;
 }
 
+.card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-height: 1.3;
+}
+
+.card p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+.btn-agregar {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+  align-self: center;
+  width: 90%;
+  font-size: 1rem;
+}
+
+.btn-agregar:hover {
+  background-color: #0056b3;
+}
+
+/* Sección Puestos */
 .seccion-puestos {
   padding: 45px 20px;
   background-color: #eaf6fb;
@@ -133,7 +230,7 @@ main {
 .puesto-card button {
   margin-top: 14px;
   padding: 12px 24px;
-  background-color: #f5c518; /* dorado bandera */
+  background-color: #f5c518;
   color: #1a1a1a;
   border: none;
   border-radius: 8px;
@@ -144,6 +241,11 @@ main {
 
 .puesto-card button:hover {
   background-color: #e0b200;
+}
+
+/* Sección Reseñas */
+.seccion-reseñas {
+  padding-top: 40px;
 }
 
 .reseñas-grid {
@@ -161,6 +263,7 @@ main {
   color: #555;
 }
 
+/* Sección Contacto */
 .seccion-contacto form {
   display: flex;
   flex-direction: column;
@@ -193,6 +296,7 @@ main {
   background-color: #5a9cc0;
 }
 
+/* Sección Multimedia (Video) */
 .video-responsive {
   position: relative;
   padding-bottom: 56.25%;
@@ -211,37 +315,433 @@ main {
   height: 100%;
 }
 
-
+/* --- FOOTER FIJO --- */
 footer {
   background-color: #74c0e3;
   color: white;
   text-align: center;
-  padding: 20px 10px;
-  margin-top: 50px;
+  padding: 10px 10px;
   font-weight: 600;
   font-size: 1rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 -3px 8px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-@media (max-width: 600px) {
-  nav ul {
+footer p {
+  margin-bottom: 0;
+}
+
+/* ESTILOS PARA EL NAV EN EL FOOTER (OCULTAR EN MÓVIL) */
+.nav-footer {
+    display: flex; /* Mostrar por defecto en escritorio */
+    width: 100%;
+    margin-top: 5px;
+}
+
+.nav-footer ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0;
+}
+
+.nav-footer a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.nav-footer a:hover {
+  color: #f5c518;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Estilos para el carrito flotante (Desktop) */
+.carrito-flotante {
+  position: fixed;
+  top: 100px; /* Debajo del header en desktop */
+  right: 20px;
+  width: 300px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  z-index: 1000;
+  display: none; /* Oculto por defecto, se muestra con .visible */
+  flex-direction: column;
+  max-height: 80vh;
+  overflow: hidden;
+}
+
+.carrito-flotante.visible {
+  display: flex;
+}
+
+.carrito-flotante h3 {
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  color: #1a3d5d;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+/* Contenedor de items del carrito con scroll */
+.carrito-items-container {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-right: 8px;
+  margin-bottom: 10px;
+  min-height: 100px;
+}
+
+.carrito-flotante ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.carrito-flotante ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 6px 0;
+  border-bottom: 1px dashed #eee;
+  font-size: 0.9rem;
+}
+
+.carrito-flotante ul li:last-child {
+  border-bottom: none;
+}
+
+.carrito-flotante .item-nombre {
+  flex-grow: 1;
+  font-weight: 500;
+  white-space: normal;
+  word-break: break-word;
+  overflow: hidden;
+  max-width: calc(100% - 100px);
+  line-height: 1.2;
+}
+
+.carrito-flotante .item-precio {
+  font-weight: bold;
+  color: #007bff;
+  min-width: 60px;
+  text-align: right;
+  flex-shrink: 0;
+  margin-left: 5px;
+}
+
+.carrito-flotante .btn-eliminar-item {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 0.75em;
+  cursor: pointer;
+  margin-left: 8px;
+  transition: background-color 0.3s ease;
+  flex-shrink: 0;
+}
+
+.carrito-flotante .btn-eliminar-item:hover {
+  background-color: #c82333;
+}
+
+.carrito-flotante p {
+  text-align: right;
+  font-size: 1.05rem;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 10px;
+  padding-top: 5px;
+  border-top: 1px solid #eee;
+  flex-shrink: 0;
+}
+
+/* Contenedor de botones (acciones) */
+.carrito-acciones {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.carrito-acciones button {
+  width: 100%;
+  padding: 9px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.btn-vaciar-carrito {
+  background-color: #ffc107;
+  color: #333;
+}
+
+.btn-vaciar-carrito:hover {
+  background-color: #e0a800;
+}
+
+.btn-pagar {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-pagar:hover {
+  background-color: #218838;
+}
+
+.btn-cerrar-carrito {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btn-cerrar-carrito:hover {
+  background-color: #5a6268;
+}
+
+
+/* Media Queries para Responsive */
+/* --- Pantallas Medianas (hasta 768px, tablets en vertical y smartphones grandes) --- */
+@media (max-width: 768px) {
+  /* Ajustar padding del body para compensar el header y footer en móvil */
+  body {
+    padding-top: 60px; /* Header más compacto en móvil */
+    padding-bottom: 70px; /* Solo el pie de página sin nav-footer */
+  }
+
+  /* Header en modo móvil: Título y Botón Carrito SOLAMENTE */
+  header {
+      padding: 10px 15px;
+      justify-content: space-between; /* Espacio entre el título y el carrito */
+      height: 60px; /* Altura fija para el header en móvil */
+  }
+
+  header h1 {
+      font-size: 1.3rem; /* Título más pequeño para móviles */
+  }
+
+  /* Ocultar la navegación principal del header en pantallas pequeñas */
+  header nav {
+      display: none;
+  }
+
+  /* Asegurar que el botón del carrito sea visible y tenga espacio adecuado */
+  .btn-carrito {
+      margin-left: 0; /* No hay nav a la izquierda, así que se elimina el margen */
+      padding: 5px 10px; /* Reducir padding para ser más compacto */
+      font-size: 0.85rem; /* Reducir tamaño de fuente */
+  }
+
+  /* Carrito flotante en modo HALF-SCREEN responsive */
+  .carrito-flotante {
+    position: fixed;
+    top: 50vh; /* Empieza en la mitad de la pantalla */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 50vh; /* Ocupa la mitad inferior de la altura de la ventana */
+    max-height: 50vh;
+    border-radius: 10px 10px 0 0;
+    padding: 15px;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(100%); /* Ocultar el carrito inicialmente (totalmente fuera de vista) */
+    display: flex; /* Asegura que se use flexbox para el layout interno */
     flex-direction: column;
-    align-items: center;
+    justify-content: space-between;
+    z-index: 1002; /* Más alto que el header/footer para que esté por encima */
   }
-  .card, .puesto-card {
-    width: 90%;
+
+  .carrito-flotante.visible {
+    transform: translateY(0); /* Mostrar el carrito */
   }
+
+  /* Ajustes internos del carrito para half-screen */
+  .carrito-flotante h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+
+  .carrito-items-container {
+    flex-grow: 1; /* Esto es crucial para que ocupe el espacio y el scroll funcione */
+    overflow-y: auto; /* Aquí se aplica el scroll solo a los ítems */
+    padding-right: 5px;
+    margin-bottom: 8px;
+    min-height: 50px; /* Asegura una altura mínima para el contenedor de ítems */
+  }
+
+  .carrito-flotante ul {
+      padding-bottom: 5px;
+  }
+
+  .carrito-flotante ul li {
+    font-size: 0.8rem;
+    padding: 5px 0;
+  }
+
+  .carrito-flotante .item-nombre {
+    max-width: calc(100% - 90px);
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  .carrito-flotante .btn-eliminar-item {
+    padding: 1px 5px;
+    font-size: 0.7em;
+  }
+
+  .carrito-flotante p {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+  }
+
+  .carrito-acciones {
+    gap: 6px;
+  }
+
+  .carrito-acciones button {
+    font-size: 0.85rem;
+    padding: 7px 10px;
+  }
+
+  /* Ajuste de Cards de Productos en móvil */
+  .productos-grid,
   .puestos-grid {
     flex-direction: column;
     align-items: center;
+    gap: 15px;
   }
-  .productos-grid {
-    flex-direction: column;
-    align-items: center;
+
+  .card {
+    width: 95%;
+    max-width: 320px;
+    height: auto;
+    padding: 15px;
   }
-  .seccion-banner img {
-    width: 110px;
+
+  .card h3 {
+    font-size: 1rem;
+    -webkit-line-clamp: 3;
   }
-  iframe {
-    height: 220px;
+
+  .card p {
+    font-size: 1.1rem;
+  }
+
+  .card img {
+    height: 120px;
+  }
+
+  .btn-agregar {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    width: 100%;
+  }
+
+  /* Ocultar el nav del footer en pantallas pequeñas */
+  footer .nav-footer {
+      display: none;
+  }
+
+  footer {
+    padding: 10px 5px; /* Restaurar padding para un footer más compacto sin nav */
+    height: auto; /* Altura auto, ya que el nav-footer no estará */
+  }
+
+  footer p {
+      font-size: 0.8rem;
+      margin-bottom: 0; /* Eliminar margen si solo hay un párrafo */
+  }
+}
+
+/* --- Pantallas Pequeñas (hasta 480px, smartphones) --- */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+    padding-top: 60px;
+    padding-bottom: 70px;
+  }
+
+  header, main, footer {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  header h1 {
+      font-size: 1.1rem;
+  }
+
+  .btn-carrito {
+      padding: 4px 8px;
+      font-size: 0.8rem;
+  }
+
+  /* Carrito flotante para móviles muy pequeños */
+  .carrito-flotante {
+    height: 60vh; /* Aumentar un poco la altura si es necesario para dispositivos muy pequeños */
+    max-height: 60vh;
+    top: 40vh; /* Inicia más arriba para dar más espacio al contenido superior */
+    padding: 8px;
+  }
+
+  .carrito-flotante h3 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+
+  .carrito-items-container {
+    min-height: 40px;
+  }
+
+  .carrito-flotante ul li {
+    font-size: 0.75rem;
+    padding: 4px 0;
+  }
+
+  .carrito-flotante .item-nombre {
+    max-width: calc(100% - 80px);
+  }
+
+  .carrito-flotante .btn-eliminar-item {
+    padding: 0 4px;
+    font-size: 0.65em;
+  }
+
+  .carrito-flotante p {
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+  }
+
+  .carrito-acciones {
+    gap: 5px;
+  }
+
+  .carrito-acciones button {
+    font-size: 0.8rem;
+    padding: 6px 8px;
   }
 }
